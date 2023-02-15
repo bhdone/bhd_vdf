@@ -1,0 +1,26 @@
+diff --git a/src/util.hpp b/src/util.hpp
+index 0d6c379..1707be6 100644
+--- a/src/util.hpp
++++ b/src/util.hpp
+@@ -35,11 +35,9 @@ template <typename Int, typename Int2>
+ constexpr inline Int cdiv(Int a, Int2 b) { return (a + b - 1) / b; }
+ 
+ #ifdef _WIN32
+-#define NOMINMAX
+ #include <windows.h>
+ #include <processthreadsapi.h>
+-#include "uint128_t.h"
+-#else
++#endif
+ // __uint__128_t is only available in 64 bit architectures and on certain
+ // compilers.
+ typedef __uint128_t uint128_t;
+@@ -52,8 +50,6 @@ std::ostream &operator<<(std::ostream &strm, uint128_t const &v)
+     return strm;
+ }
+ 
+-#endif
+-
+ // compiler-specific byte swap macros.
+ #if defined(_MSC_VER)
+ 
