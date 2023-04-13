@@ -14,15 +14,6 @@ namespace vdf {
 
 namespace types {
 
-namespace {
-
-std::string to_string(Bytes const& bytes) {
-    std::string res(reinterpret_cast<char const*>(bytes.data()), bytes.size());
-    return res;
-}
-
-} // namespace
-
 Integer::Integer(integer const& val) { val_.reset(new integer(val)); }
 
 Integer::Integer(std::string const& str) { val_.reset(new integer(str)); }
