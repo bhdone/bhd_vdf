@@ -8,8 +8,6 @@ int gcd_128_max_iter = 3;
 #include "verifier.h"
 #include "create_discriminant.h"
 
-std::ostream& operator<<(std::ostream& os, __mpz_struct const* z) { return os; }
-
 namespace vdf {
 
 namespace types {

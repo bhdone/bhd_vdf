@@ -18,7 +18,6 @@ Bytes ConnectBytes(Bytes const& lhs, Bytes const& rhs) {
 
 uint8_t ValueFromHexChar(char ch) {
     char hex[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
-    char chlo = std::tolower(ch);
     auto it = std::find(std::begin(hex), std::end(hex), ch);
     if (it == std::end(hex)) {
         throw std::runtime_error("invalid hex character");

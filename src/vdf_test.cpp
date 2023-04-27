@@ -12,7 +12,6 @@ char const* initial_form_str =
 
 // the number of iterations we want to run
 uint64_t iters{10 * 1024};
-char const hex_chars[16] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
 
 TEST(VDF, BytesFromStr) {
     auto initial_form = vdf::utils::BytesFromStr(initial_form_str);
