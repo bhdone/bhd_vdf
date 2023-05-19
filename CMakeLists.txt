@@ -64,7 +64,7 @@ if (INCLUDE_CHIAPOS)
         BUILD_COMMAND ""
         INSTALL_COMMAND ""
         TEST_COMMAND ""
-        PATCH_COMMAND git apply --reject ${CMAKE_CURRENT_SOURCE_DIR}/chiapos-improved.patch > /dev/null 2>&1 || true
+        PATCH_COMMAND ! test -f ${CMAKE_CURRENT_BINARY_DIR}/patched && git apply --reject ${CMAKE_CURRENT_SOURCE_DIR}/chiapos-improved.patch && touch > ${CMAKE_CURRENT_BINARY_DIR}/patched /dev/null 2>&1 || true
     )
     ExternalProject_Get_property(chiapos SOURCE_DIR)
     set(chiapos_SOURCE_DIR ${SOURCE_DIR})
