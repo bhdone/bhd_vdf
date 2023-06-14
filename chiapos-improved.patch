@@ -1,8 +1,8 @@
 diff --git a/src/util.hpp b/src/util.hpp
-index 0d6c379..1707be6 100644
+index 0d6c379..ee4080a 100644
 --- a/src/util.hpp
 +++ b/src/util.hpp
-@@ -35,11 +35,9 @@ template <typename Int, typename Int2>
+@@ -35,11 +35,10 @@ template <typename Int, typename Int2>
  constexpr inline Int cdiv(Int a, Int2 b) { return (a + b - 1) / b; }
  
  #ifdef _WIN32
@@ -11,11 +11,12 @@ index 0d6c379..1707be6 100644
  #include <processthreadsapi.h>
 -#include "uint128_t.h"
 -#else
++#define __popcnt64 _popcnt64
 +#endif
  // __uint__128_t is only available in 64 bit architectures and on certain
  // compilers.
  typedef __uint128_t uint128_t;
-@@ -52,8 +50,6 @@ std::ostream &operator<<(std::ostream &strm, uint128_t const &v)
+@@ -52,8 +51,6 @@ std::ostream &operator<<(std::ostream &strm, uint128_t const &v)
      return strm;
  }
  
